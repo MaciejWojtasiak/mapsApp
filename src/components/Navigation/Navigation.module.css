@@ -17,26 +17,25 @@
     display: flex;
     gap: 2rem;
     list-style: none;
+    align-items: center;
 }
+
 .navbar li {
     font-size: 1.2rem;
-}
-.navbar .loginBtn {
-    padding: .8rem 2rem;
-    background-color: var(--color-secondary);
-    color: var(--color-dark--0);
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: 600;
 }
 
 .link {
     color: var(--color-light--0);
     text-decoration: none;
 }
+
 .link:hover{
     color: var(--color-light--1);
 }
 .link.active{
     color: var(--color-light--1);
+}
+
+.navbar a:global(.active) {
+    color: var(--color-brand--2);
 }

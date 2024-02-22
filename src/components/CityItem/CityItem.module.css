@@ -1,0 +1,37 @@
+.cityItem{
+    display: flex;
+    width: 400px;
+    background-color: var(--color-dark--1);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    align-items: center;
+    gap: 1rem;
+    border-left: 3px solid var( --color-secondary);
+    cursor: pointer;
+    color: var(--color-light--1);
+    text-decoration: none;
+}
+
+.date {
+    margin-left: auto;
+}
+
+.deleteBtn {
+    border: none;
+    background-color: var(--color-dark--2);
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    color: var(--color-light--0);
+    cursor: pointer;
+    transition: .2s all;
+}
+
+.deleteBtn:hover {
+    background-color: var(--color-primary);
+    color: var(--color-dark--1);
+}

@@ -23,20 +23,11 @@
 }
 
 .homepage h1 {
-    font-size: 4rem;
+    font-size: 3rem;
+    padding: 0 1rem;
 }
 
 .homepage p {
     font-size: 1.8rem;
     color: var(--color-light--0);
-}
-
-.homepage button {
-    padding: 1rem 3rem;
-    border-radius: 5px;
-    background-color: var(--color-secondary);
-    text-transform: uppercase;
-    font-weight: 500;
-    border: none;
-    cursor: pointer;
 }
