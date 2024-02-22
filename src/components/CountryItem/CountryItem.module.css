@@ -1,0 +1,11 @@
+.countryItem {
+    background-color: var(--color-dark--1);
+    padding: 1rem;
+    border-radius: 8px;
+    height: 80px;
+    border-left: 3px solid var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+}

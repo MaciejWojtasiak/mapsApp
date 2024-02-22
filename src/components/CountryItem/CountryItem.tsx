@@ -1,6 +1,8 @@
-function CountryItem() {
+import styles from './CountryItem.module.css';
+
+function CountryItem({country}) {
   return (
-    <div>CountryItem</div>
+    <div className={styles.countryItem}>{country}</div>
   )
 }
 

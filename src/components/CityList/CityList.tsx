@@ -1,7 +1,7 @@
 import styles from './CityList.module.css';
 import CityItem from '../CityItem/CityItem';
 
-function CityList({cities}) {
+function CityList({cities, handleDelete}) {
     
  {if(!cities.length) return <div>No cities yet.</div>}
 
@@ -14,7 +14,8 @@ function CityList({cities}) {
                  id={city.id}
                  cityName={city.cityName} 
                  date={city.date} 
-                 emoji={city.emoji}                 
+                 emoji={city.emoji} 
+                 handleDelete={handleDelete}                
                  />
             )            
         })}

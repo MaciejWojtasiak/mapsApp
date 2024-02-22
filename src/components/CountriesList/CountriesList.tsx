@@ -1,15 +1,24 @@
 import styles from './CountriesList.module.css';
 import CountryItem from '../CountryItem/CountryItem';
 
-function CountriesList({countries}) {
+function CountriesList({cities}) {
     
- {if(!countries.length) return <div>No countries yet.</div>}
+ {if(!cities.length) return <div>No countries yet.</div>}
+
+ const countries = cities.reduce((arr, city) => {
+  if(!arr.map(el=>el.country).includes(city.country)) {
+    return [...arr, {country:city.country, emoji:city.emoji}]
+  }else {
+    return arr;
+  }
+ },[]);
+ 
 
   return (
     <ul className={styles.countriesList}>
-        {countries.map((country)=>{
+        {countries.map((country, index)=>{          
             return (
-                <CountryItem />
+                <CountryItem key={index} country={country.country}/>
             )            
         })}
     </ul>
