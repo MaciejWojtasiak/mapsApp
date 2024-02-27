@@ -15,7 +15,9 @@ function CityList({cities, handleDelete}) {
                  cityName={city.cityName} 
                  date={city.date} 
                  emoji={city.emoji} 
-                 handleDelete={handleDelete}                
+                 handleDelete={handleDelete}  
+                 lat={city.position.lat}              
+                 lng={city.position.lng}              
                  />
             )            
         })}

@@ -1,0 +1,22 @@
+.form {
+    padding: 1rem;
+    background-color: var(--color-dark--2);
+    border-radius: 5px;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.buttons button {
+    border: none;
+    cursor: pointer;
+}
+.buttons button:last-of-type {
+    background-color: transparent;
+    border: 1px solid var(--color-light--2);
+    color: var(--color-light--2);
+}

@@ -8,4 +8,6 @@
     align-items: center;
     justify-content: center;
     font-size: 1.6rem;
+    text-decoration: none;
+    color: var(--color-light--1);
 }

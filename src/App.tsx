@@ -11,6 +11,8 @@ import AppLayout from "./pages/AppLayout/AppLayout";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import CityList from "./components/CityList/CityList";
 import City from './components/City/City';
+import Country from "./components/Country/Country";
+import Form from "./components/Form/Form";
 import CountriesList from "./components/CountriesList/CountriesList";
 
 function App() {
@@ -41,10 +43,10 @@ function App() {
               <Route index element={<CityList cities={cities} handleDelete={handleDelete}/>} />
               <Route path="cities" element={<CityList cities={cities} handleDelete={handleDelete}/>}/>
               <Route path="cities/:id" element={<City cities={cities} />}/>
+              <Route path="countries/:country" element={<Country />}/>
               <Route path="countries" element={<CountriesList cities={cities}/>}/>
-              <Route path="form" element={<p>Form</p>}/>
-            </Route>
-            
+              <Route path="form" element={<Form />}/>
+            </Route>            
             <Route path="*" element={<PageNotFound />}/>
          </Routes>
       </Router>
