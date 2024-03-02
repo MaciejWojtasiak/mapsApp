@@ -1,6 +1,6 @@
-import { BrowserRouter as Router , Routes, Route} from "react-router-dom";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { BrowserRouter as Router , Routes, Route, Navigate} from "react-router-dom";
+import { useEffect, useState, useContext } from "react";
+// import axios from "axios";
 import './App.css';
 import Product from "./pages/Product/Product";
 import Pricing from "./pages/Pricing/Pricing";
@@ -15,20 +15,12 @@ import Country from "./components/Country/Country";
 import Form from "./components/Form/Form";
 import CountriesList from "./components/CountriesList/CountriesList";
 
-function App() {
-  const [cities, setCities] = useState([]);
 
-  useEffect(()=>{
-    const getData = async ()=>{
-      const data = await axios.get(`http://localhost:8000/cities`);
-      setCities(data.data);     
-    }
-    getData();
-  },[])
+function App() {  
 
-  const handleDelete = (id) => {
-    setCities(prevState => prevState.filter(city=>city.id != id));
-  }
+  // const handleDelete = (id) => {
+  //   setCities(prevState => prevState.filter(city=>city.id != id));
+  // }
   
   return (
     <div>      
@@ -40,11 +32,11 @@ function App() {
             <Route path="pricing" element={<Pricing />}/>
             <Route path="login" element={<LoginPage />}/>
             <Route path="app" element={<AppLayout />}> 
-              <Route index element={<CityList cities={cities} handleDelete={handleDelete}/>} />
-              <Route path="cities" element={<CityList cities={cities} handleDelete={handleDelete}/>}/>
-              <Route path="cities/:id" element={<City cities={cities} />}/>
+              <Route index element={<Navigate replace to="cities"/>} />
+              <Route path="cities" element={<CityList />}/>
+              {/* <Route path="cities/:id" element={<City  />}/> */}
               <Route path="countries/:country" element={<Country />}/>
-              <Route path="countries" element={<CountriesList cities={cities}/>}/>
+              <Route path="countries" element={<CountriesList />}/>
               <Route path="form" element={<Form />}/>
             </Route>            
             <Route path="*" element={<PageNotFound />}/>

@@ -1,7 +1,9 @@
 import styles from './CountriesList.module.css';
 import CountryItem from '../CountryItem/CountryItem';
+import {useCities} from '../../context/CitiesContext';
 
-function CountriesList({cities}) {
+function CountriesList() {
+  const cities = useCities();
     
  {if(!cities.length) return <div>No countries yet.</div>}
 

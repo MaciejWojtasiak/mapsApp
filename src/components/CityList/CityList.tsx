@@ -1,8 +1,9 @@
 import styles from './CityList.module.css';
 import CityItem from '../CityItem/CityItem';
+import {useCities} from '../../context/CitiesContext';
 
-function CityList({cities, handleDelete}) {
-    
+function CityList() {
+  const cities = useCities();
  {if(!cities.length) return <div>No cities yet.</div>}
 
   return (
@@ -14,8 +15,7 @@ function CityList({cities, handleDelete}) {
                  id={city.id}
                  cityName={city.cityName} 
                  date={city.date} 
-                 emoji={city.emoji} 
-                 handleDelete={handleDelete}  
+                 emoji={city.emoji}                   
                  lat={city.position.lat}              
                  lng={city.position.lng}              
                  />
