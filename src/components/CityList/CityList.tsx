@@ -3,7 +3,9 @@ import CityItem from '../CityItem/CityItem';
 import {useCities} from '../../context/CitiesContext';
 
 function CityList() {
-  const cities = useCities();
+  const {cities, isLoading} = useCities();
+
+ {if(isLoading) return <div>Loading...</div>}
  {if(!cities.length) return <div>No cities yet.</div>}
 
   return (

@@ -1,17 +1,21 @@
 import { useParams, useSearchParams } from "react-router-dom";
+import {useCities} from '../../context/CitiesContext';
+import { useEffect } from "react";
 
-function City({cities}) {
-    const {id} = useParams();
-    const [searchParams, setSearchParams] = useSearchParams();
-    const lat = searchParams.get('lat');
-    const lng = searchParams.get('lng');
-    const currentCity = cities.find(city=> city.id == id);
+function City() {
+    const {id} = useParams();    
+    const {getCity, currentCity} = useCities();
+    
+    useEffect(()=>{
+      getCity(id);
+    },[id])
+
+    
+
 
   return (
     <div className="city">
-      {currentCity.cityName}
-      {`Position lat:${lat}, lng:${lng}`}
-      <button onClick={()=>setSearchParams({lat:20,lng:30})}>Change</button>
+     {currentCity && currentCity.cityName}
     </div>
   )
 }

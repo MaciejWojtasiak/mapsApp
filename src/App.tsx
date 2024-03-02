@@ -18,10 +18,6 @@ import CountriesList from "./components/CountriesList/CountriesList";
 
 function App() {  
 
-  // const handleDelete = (id) => {
-  //   setCities(prevState => prevState.filter(city=>city.id != id));
-  // }
-  
   return (
     <div>      
       <Router>
@@ -34,7 +30,7 @@ function App() {
             <Route path="app" element={<AppLayout />}> 
               <Route index element={<Navigate replace to="cities"/>} />
               <Route path="cities" element={<CityList />}/>
-              {/* <Route path="cities/:id" element={<City  />}/> */}
+              <Route path="cities/:id" element={<City  />}/>
               <Route path="countries/:country" element={<Country />}/>
               <Route path="countries" element={<CountriesList />}/>
               <Route path="form" element={<Form />}/>

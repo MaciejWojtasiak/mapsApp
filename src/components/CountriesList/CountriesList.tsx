@@ -3,8 +3,9 @@ import CountryItem from '../CountryItem/CountryItem';
 import {useCities} from '../../context/CitiesContext';
 
 function CountriesList() {
-  const cities = useCities();
+  const {cities, isLoading} = useCities();
     
+ {if(isLoading) return <div>Loading...</div>}
  {if(!cities.length) return <div>No countries yet.</div>}
 
  const countries = cities.reduce((arr, city) => {
