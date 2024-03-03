@@ -1,3 +1,13 @@
 .country{
-    
+    background-color: var(--color-dark--2);
+    padding: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.country p {
+    text-transform: uppercase;
 }

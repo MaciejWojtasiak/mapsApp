@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import styles from './Form.module.css';
+import BackButton from '../BackButton/BackButton';
 
 function Form() {
     const navigate = useNavigate();
@@ -22,10 +23,7 @@ function Form() {
         </div>
         <div className={styles.buttons}>
             <button className='cta'>Add</button>
-            <button className='cta' onClick={(e)=>{
-                e.preventDefault();
-                navigate(-1);
-            }}>&larr; Back</button>
+            <BackButton />
         </div>
     </form>
   )
