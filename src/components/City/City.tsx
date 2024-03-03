@@ -3,6 +3,7 @@ import { useCities } from '../../context/CitiesContext';
 import { useEffect } from "react";
 import styles from './City.module.css';
 import BackButton from "../BackButton/BackButton";
+import Loader from "../Loader/Loader";
 
 
 const formatDate = (date) => {
@@ -24,7 +25,7 @@ function City() {
 
     const {cityName, date, notes} = currentCity;
 
-    {isLoading && <div>Loading...</div>}
+    {isLoading && <Loader />}
 
     return (
     <div className={styles.city}>

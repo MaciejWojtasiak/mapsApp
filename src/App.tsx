@@ -17,7 +17,6 @@ import CountriesList from "./components/CountriesList/CountriesList";
 
 
 function App() {  
-
   return (
     <div>      
       <Router>

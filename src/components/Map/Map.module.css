@@ -1,4 +1,16 @@
 .mapContainer {
-    background-color: firebrick;
     flex: 1;
+    position: relative;
+}
+.map {
+    height: 100%;
+}
+.button {
+    position: absolute;
+    padding: 1rem;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999999;
+    cursor: pointer;
 }
