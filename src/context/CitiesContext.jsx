@@ -23,6 +23,10 @@ const CitiesContextProvider = ({ children }) => {
     const res = await axios.post('http://localhost:8000/cities',city);    
     setCities(prevState => [...prevState,res.data])
   }
+  const deleteCity = async (id) => {
+    await axios.delete(`http://localhost:8000/cities/${id}`);
+    setCities(cities=>cities.filter(city=>city.id !== id));
+  }
 
   const getCity = async (id) => {    
     try {
@@ -37,7 +41,7 @@ const CitiesContextProvider = ({ children }) => {
   } 
 
     return (
-        <CitiesContext.Provider value={{cities,isLoading,currentCity, getCity, addCity}}>            
+        <CitiesContext.Provider value={{cities,isLoading,currentCity, getCity, addCity, deleteCity}}>            
                 {children}
         </CitiesContext.Provider>
     )
