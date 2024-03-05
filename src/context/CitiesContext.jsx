@@ -17,7 +17,12 @@ const CitiesContextProvider = ({ children }) => {
     }
     getData(); 
     setIsLoading(false);
-  },[])
+  },[]);
+
+  const addCity = async (city) =>{   
+    const res = await axios.post('http://localhost:8000/cities',city);    
+    setCities(prevState => [...prevState,res.data])
+  }
 
   const getCity = async (id) => {    
     try {
@@ -32,7 +37,7 @@ const CitiesContextProvider = ({ children }) => {
   } 
 
     return (
-        <CitiesContext.Provider value={{cities,isLoading,currentCity, getCity}}>            
+        <CitiesContext.Provider value={{cities,isLoading,currentCity, getCity, addCity}}>            
                 {children}
         </CitiesContext.Provider>
     )

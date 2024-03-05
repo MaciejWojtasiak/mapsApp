@@ -5,13 +5,15 @@ import useUrlPosition from '../../hooks/useUrlPosition';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Loader from '../Loader/Loader';
+import {useCities} from '../../context/CitiesContext';
 
 function Form() {
+    const { addCity } = useCities();
     const navigate = useNavigate();
     const [lat,lng] = useUrlPosition();
     const [cityName,setCityName] = useState('');
     const [country,setCountry] = useState('');
-    const [date,setDate] = useState(new Date());
+    const [date,setDate] = useState('');
     const [notes,setNotes] = useState('');    
     const [isFetching, setIsFetching] = useState(false);
     const [fetchErr, setFetchErr] = useState(false);
@@ -40,6 +42,25 @@ function Form() {
         getData();        
     },[lat,lng])
 
+    const handleAdd = async (e) =>{
+        e.preventDefault();       
+        if(!cityName || !date) return;
+
+        const city = {
+            cityName,
+            country,
+            date,
+            notes,
+            emoji:'',
+            position:{
+                lat,
+                lng
+            }
+        }
+        await addCity(city);      
+        navigate('/app/cities');  
+    }
+
     {if(isFetching) return <Loader />}
     {if(fetchErr) return<div>{fetchErr}</div>}
 
@@ -52,7 +73,7 @@ function Form() {
 
         <div className="form-group">
             <label htmlFor="date">When did you go to?</label>
-            <input type="date" name="date" id="date"/>
+            <input type="date" name="date" id="date" onChange={e=>setDate(e.target.value)}/>
         </div>
 
         <div className="form-group">
@@ -60,11 +81,11 @@ function Form() {
             <textarea name="notes" id="notes" value={notes} onChange={e=>setNotes(e.target.value)}/>
         </div>
         <div className={styles.buttons}>
-            <button className='cta'>Add</button>
+            <button className='cta' onClick={handleAdd}>Add</button>
             <BackButton />
         </div>
     </form>
   )
 }
 
-export default Form
+export default Form;

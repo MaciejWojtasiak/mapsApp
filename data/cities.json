@@ -1,52 +1,160 @@
 {
-    "cities": [
-      {
-        "cityName": "Lisbon",
-        "country": "Portugal",
-        "emoji": "🇵🇹",
-        "date": "2027-10-31T15:59:59.138Z",
-        "notes": "My favorite city so far!",
-        "position": {
-          "lat": 38.727881642324164,
-          "lng": -9.140900099907554
-        },
-        "id": 73930385
+  "cities": [
+    {
+      "cityName": "Lisbon",
+      "country": "Portugal",
+      "emoji": "🇵🇹",
+      "date": "2027-10-31T15:59:59.138Z",
+      "notes": "My favorite city so far!",
+      "position": {
+        "lat": 38.727881642324164,
+        "lng": -9.140900099907554
       },
-      {
-        "cityName": "Madrid",
-        "country": "Spain",
-        "emoji": "🇪🇸",
-        "date": "2027-07-15T08:22:53.976Z",
-        "notes": "",
-        "position": {
-          "lat": 40.46635901755316,
-          "lng": -3.7133789062500004
-        },
-        "id": 17806751
+      "id": 73930385
+    },
+    {
+      "cityName": "Madrid",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2027-07-15T08:22:53.976Z",
+      "notes": "",
+      "position": {
+        "lat": 40.46635901755316,
+        "lng": -3.7133789062500004
       },
-      {
-        "cityName": "Berlin",
-        "country": "Germany",
-        "emoji": "🇩🇪",
-        "date": "2027-02-12T09:24:11.863Z",
-        "notes": "Amazing 😃",
-        "position": {
-          "lat": 52.53586782505711,
-          "lng": 13.376933665713324
-        },
-        "id": 98443197
+      "id": 17806751
+    },
+    {
+      "cityName": "Berlin",
+      "country": "Germany",
+      "emoji": "🇩🇪",
+      "date": "2027-02-12T09:24:11.863Z",
+      "notes": "Amazing 😃",
+      "position": {
+        "lat": 52.53586782505711,
+        "lng": 13.376933665713324
       },
-      {
-        "cityName": "Nijar",
-        "country": "Spain",
-        "emoji": "🇪🇸",
-        "date": "2023-04-03T07:47:59.202Z",
-        "notes": "Beautifull weather outside",
-        "position": {
-          "lat": "36.967508314568164",
-          "lng": "-2.13128394200588"
-        },
-        "id": 98443198
+      "id": 98443197
+    },
+    {
+      "cityName": "Nijar",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2023-04-03T07:47:59.202Z",
+      "notes": "Beautifull weather outside",
+      "position": {
+        "lat": "36.967508314568164",
+        "lng": "-2.13128394200588"
+      },
+      "id": 98443198
+    },
+    {
+      "id": "a72b",
+      "cityName": "Bad Salzungen",
+      "country": "Germany",
+      "date": "2024-03-14",
+      "notes": "fassfa",
+      "emoji": "",
+      "position": {
+        "lat": "50.81473100062728",
+        "lng": "10.283203125000002"
       }
-    ]
-  }
+    },
+    {
+      "id": "8673",
+      "cityName": "Tynec nad Sazavou",
+      "country": "Czechia",
+      "date": "2024-02-07",
+      "notes": "",
+      "emoji": "",
+      "position": {
+        "lat": "49.80384112632148",
+        "lng": "14.558332934104415"
+      }
+    },
+    {
+      "id": "ca97",
+      "cityName": "Warsaw",
+      "country": "Poland",
+      "date": "2023-12-26",
+      "notes": "",
+      "emoji": "",
+      "position": {
+        "lat": "52.29107115218488",
+        "lng": "21.019848183679947"
+      }
+    },
+    {
+      "id": "83a8",
+      "cityName": "Moscow",
+      "country": "Russian Federation (the)",
+      "date": "2024-01-30",
+      "notes": "fassfafas",
+      "emoji": "",
+      "position": {
+        "lat": "55.57019418096217",
+        "lng": "37.35351562500001"
+      }
+    },
+    {
+      "id": "4714",
+      "cityName": "Krakow",
+      "country": "Poland",
+      "date": "2023-10-05",
+      "notes": "gsdgdsgds",
+      "emoji": "",
+      "position": {
+        "lat": "50.05857950775578",
+        "lng": "20.039062500000004"
+      }
+    },
+    {
+      "id": "47c3",
+      "cityName": "Dusseldorf",
+      "country": "Germany",
+      "date": "2024-01-24",
+      "notes": "gdsgdfggd",
+      "emoji": "",
+      "position": {
+        "lat": "51.31210323681414",
+        "lng": "6.767578125000001"
+      }
+    },
+    {
+      "id": "a544",
+      "cityName": "Bydgoszcz",
+      "country": "Poland",
+      "date": "2024-01-31",
+      "notes": "Zawody",
+      "emoji": "",
+      "position": {
+        "lat": "53.12023348490852",
+        "lng": "18.006591796875004"
+      }
+    },
+    {
+      "id": "3fb9",
+      "cityName": "Nurnberg",
+      "country": "Germany",
+      "date": "2024-01-31",
+      "notes": "Zawody",
+      "emoji": "",
+      "position": {
+        "lat": "49.34750200505469",
+        "lng": "11.083862549923314"
+      }
+    },
+    {
+      "id": "5622",
+      "cityName": "Reutlingen",
+      "country": "Germany",
+      "date": "2024-02-07",
+      "notes": "fsafsafas",
+      "emoji": "",
+      "position": {
+        "lat": "48.48066334001762",
+        "lng": "9.192695125622212"
+      }
+    }
+  ]
+}
