@@ -47,42 +47,6 @@
         "lng": "-2.13128394200588"
       },
       "id": 98443198
-    },
-    {
-      "id": "a72b",
-      "cityName": "Bad Salzungen",
-      "country": "Germany",
-      "date": "2024-03-14",
-      "notes": "fassfa",
-      "emoji": "",
-      "position": {
-        "lat": "50.81473100062728",
-        "lng": "10.283203125000002"
-      }
-    },
-    {
-      "id": "8673",
-      "cityName": "Tynec nad Sazavou",
-      "country": "Czechia",
-      "date": "2024-02-07",
-      "notes": "",
-      "emoji": "",
-      "position": {
-        "lat": "49.80384112632148",
-        "lng": "14.558332934104415"
-      }
-    },
-    {
-      "id": "ca97",
-      "cityName": "Warsaw",
-      "country": "Poland",
-      "date": "2023-12-26",
-      "notes": "",
-      "emoji": "",
-      "position": {
-        "lat": "52.29107115218488",
-        "lng": "21.019848183679947"
-      }
     }
   ]
 }
