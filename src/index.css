@@ -61,10 +61,11 @@ input:focus {
     color: var(--color-dark--0);
     text-decoration: none;
     border-radius: 5px;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 1.4rem;
     text-transform: uppercase;
     cursor: pointer;
+    border: none;
 }
 
 

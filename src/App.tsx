@@ -1,6 +1,4 @@
 import { BrowserRouter as Router , Routes, Route, Navigate} from "react-router-dom";
-import { useEffect, useState, useContext } from "react";
-// import axios from "axios";
 import './App.css';
 import Product from "./pages/Product/Product";
 import Pricing from "./pages/Pricing/Pricing";
@@ -15,8 +13,7 @@ import Country from "./components/Country/Country";
 import Form from "./components/Form/Form";
 import CountriesList from "./components/CountriesList/CountriesList";
 
-
-function App() {  
+function App() {    
   return (
     <div>      
       <Router>

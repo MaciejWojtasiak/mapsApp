@@ -1,22 +1,21 @@
 import { createContext, useEffect, useContext, useReducer } from "react";
 import axios from "axios";
 import citiesReducer from "../reducer/citiesReducer";
+
 export const CitiesContext = createContext('');
 
 const INITIAL_STATE = {
   cities: [],
   isLoading: false,
   currentCity: {},
-  error:''
+  error:'',
+  currentCountry:{}
 };
 
 const CitiesContextProvider = ({ children }) => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  // const [cities, setCities] = useState([]);
-  // const [isLoading, setIsLoading] = useState(false);
-  // const [currentCity, setCurrentCity] = useState({});
 
-  const [{cities,isLoading,currentCity}, dispatch] = useReducer(citiesReducer,INITIAL_STATE);
+  const [{cities,isLoading,currentCity,currentCountry}, dispatch] = useReducer(citiesReducer,INITIAL_STATE);
 
   useEffect(()=>{
     const getData = async ()=>{
@@ -47,21 +46,28 @@ const CitiesContextProvider = ({ children }) => {
       dispatch({type:'rejected', payload:err})
     }  
   }
-
   const getCity = async (id) => {    
-    try {
-       
+    try {       
       const data = await axios.get(`http://localhost:8000/cities?id=${id}`);
-      // setCurrentCity(data.data[0]);     
-    } catch {
-      console.log('Error')
-    } finally {
-      
-    }
+      dispatch({type:'currentCity',payload:data.data[0]})
+    } catch(err) {
+      dispatch({type:'rejected', payload:err})
+    } 
   } 
 
+  const getCountry = async (cityName) => {
+    try {
+      dispatch({type:'loading'})
+      const res = await axios.get(`https://restcountries.com/v3.1/name/${cityName}?fullText=true`);
+      dispatch({type:'currentCountry', payload:res.data[0]})
+    }catch (err) {
+      dispatch({type:'rejected', payload:err})
+    }
+  }
+  
+
     return (
-        <CitiesContext.Provider value={{cities,isLoading,currentCity, getCity, addCity, deleteCity}}>            
+        <CitiesContext.Provider value={{cities,isLoading,currentCity, getCity, addCity, deleteCity, getCountry, currentCountry}}>            
                 {children}
         </CitiesContext.Provider>
     )
