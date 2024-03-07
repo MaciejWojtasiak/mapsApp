@@ -11,14 +11,15 @@ const fakeUser = {
 }
 
 const INITIAL_STATE = {
-    user:fakeUser,
-    isError:false
+    user:null,
+    isError:false,
+    isAuthenticated:false
 }
 
 
 export const UserContextProvider = ({children}) => {
 
-    const [{user,isError},dispatch] = useReducer(authReducer, INITIAL_STATE);
+    const [{user,isError,isAuthenticated},dispatch] = useReducer(authReducer, INITIAL_STATE);
 
     const logout = () => {
         dispatch({type:'logout'});
@@ -31,7 +32,7 @@ export const UserContextProvider = ({children}) => {
         }
     }
 
-    return <UserContext.Provider value={{user,isError, logout, login}}>
+    return <UserContext.Provider value={{user,isError, logout, login,isAuthenticated}}>
         {children}
     </UserContext.Provider>
 }
