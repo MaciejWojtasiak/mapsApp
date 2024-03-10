@@ -1,4 +1,4 @@
-import { createContext, useEffect, useContext, useReducer } from "react";
+import { createContext, useEffect, useContext, useReducer, useCallback } from "react";
 import axios from "axios";
 import citiesReducer from "../reducer/citiesReducer";
 
@@ -46,14 +46,15 @@ const CitiesContextProvider = ({ children }) => {
       dispatch({type:'rejected', payload:err})
     }  
   }
-  const getCity = async (id) => {    
-    try {       
-      const data = await axios.get(`http://localhost:8000/cities?id=${id}`);
-      dispatch({type:'currentCity',payload:data.data[0]})
-    } catch(err) {
-      dispatch({type:'rejected', payload:err})
-    } 
-  } 
+  const getCity = useCallback(
+    async (id) => {    
+      try {       
+        const data = await axios.get(`http://localhost:8000/cities?id=${id}`);
+        dispatch({type:'currentCity',payload:data.data[0]})
+      } catch(err) {
+        dispatch({type:'rejected', payload:err})
+      } 
+    },[])
 
   const getCountry = async (cityName) => {
     try {
