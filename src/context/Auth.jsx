@@ -1,4 +1,4 @@
-import {createContext, useContext, useReducer} from 'react';
+import {createContext, useContext, useReducer } from 'react';
 import authReducer from '../reducer/authReducer';
 
 export const UserContext = createContext('');
@@ -11,11 +11,10 @@ const fakeUser = {
 }
 
 const INITIAL_STATE = {
-    user:null,
+    user:JSON.parse(localStorage.getItem('user')) || null,
     isError:false,
-    isAuthenticated:false
+    isAuthenticated:JSON.parse(localStorage.getItem('user')) != null ? true : false
 }
-
 
 export const UserContextProvider = ({children}) => {
 
@@ -23,10 +22,12 @@ export const UserContextProvider = ({children}) => {
 
     const logout = () => {
         dispatch({type:'logout'});
+        localStorage.setItem('user',null);
     }
     const login = (userCredentials)=>{
         if(fakeUser.email === userCredentials.email && fakeUser.password === userCredentials.password) {
-            dispatch({type:'login',payload:fakeUser})        
+            dispatch({type:'login',payload:fakeUser});    
+            localStorage.setItem('user',JSON.stringify(fakeUser));   
         } else {
             dispatch({type:'reject',payload:'Wrong credentials.'})
         }
